@@ -201,7 +201,7 @@ class CreateFromAnnotationsImpl extends AbstractCatalogQuery<TableZoneId> {
     }
 
     private static void processColumnsInPojo(CreateTableImpl createTable, Class<?> clazz, List<ColumnSorted> idColumns) {
-        for (Field f : clazz.getDeclaredFields()) {
+        for (Field f : clazz.getFields()) {
             if (Modifier.isStatic(f.getModifiers()) || Modifier.isTransient(f.getModifiers())) {
                 continue;
             }
